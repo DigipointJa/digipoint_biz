@@ -1,4 +1,3 @@
-<?php include "digipoint_seg.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,6 +25,8 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+	<script src="./nav.js"></script>
+	<script src="./analytics.js"></script>
   </head>
 
   <body>
@@ -41,7 +42,13 @@
           </button>
 		  <span><img src="assets/img/dplogo03.png" /></span>
         </div>
-        <?php navMenu("about"); ?>
+		<div id="loadHere"></div>
+		<script>
+		  window.addEventListener('load', event => {
+			   navMenu("about");
+		   });
+  
+		  </script>
       </div>
     </div>
 
@@ -61,7 +68,7 @@
 		<div class="row centered">
 			<br><br>
 			
-			<div class="col-lg-3">
+			<div class="col-lg-4">
 				<img class="img-circle" src="assets/img/patrick.png" width="110" height="110" alt="">		
 				<p>
 					<h4>Patrick Mignott</h4>
@@ -70,7 +77,7 @@
 				</p>				
 			</div><!-- col-lg-3 -->
 
-			<div class="col-lg-3">
+			<div class="col-lg-4">
 				<img class="img-circle" src="assets/img/garth.png" width="110" height="110" alt="">		
 				<p>
 					<h4>Garth Peryer</h4>
@@ -80,7 +87,7 @@
 			</div><!-- col-lg-3 -->
 			
 
-			<div class="col-lg-3">
+			<div class="col-lg-4">
 				<img class="img-circle" src="assets/img/lance.png" width="110" height="110" alt="">		
 				<p>
 				<h4>Lance Stewart</h4>
@@ -88,14 +95,15 @@
 					<div><a href="mailto:lstewart@digipoint.biz">lstewart@digipoint.biz</a></div>
 				</p>				
 			</div><!-- col-lg-3 -->	
-			<div class="col-lg-3">
+
+	<!-- 		<div class="col-lg-3">
 				<img class="img-circle" src="assets/img/wade.png" width="110" height="110" alt="">		
 				<p>
 				<h4>Wade 'Garrulous' Howell</h4>
 					<div>Commercial Operations</div>
 					<div><a href="mailto:whowell@digipoint.biz">whowell@digipoint.biz</a></div>
 				</p>				
-			</div><!-- col-lg-3 -->
+			</div><!-- col-lg-3 --> -->
 
 		</div><!-- row -->
 		<br>
@@ -112,7 +120,8 @@
 		<div class="container">
 			<div class="row centered">
 				<div class="col-lg-8 col-lg-offset-2">
-					<?php resonate(); ?>
+				<h4 style="text-transform:uppercase;">Mobile Business and Entertainment Solutions</h4>
+					<p>Digipoint is a full service Mobile &amp; Web content aggregator, publisher and originator with over 11 years mobile market experience and a combined 75 years technology development experience among our executives.  At Digipoint,  innovation is not a concept,  it’s our way of life. Digipoint plays a pivotal role in the mobile ecosystem wherever we operate, we create solutions that meet the future expectations of our users,  from idea to launch we connect our operator partners with the best local content partners while creating revenue generating opportunities for partners where they least expect them to be.</p>	
 				</div>
 			</div><!-- row -->
 		</div><!-- container -->
@@ -132,24 +141,48 @@
 
 	<!-- MODAL FOR CONTACT -->
 	<!-- Modal -->
-	<?php echo contactDiv(); ?>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">contact us</h4>
+			  </div>
+			  <div class="modal-body">
+					<div class="row centered">
+						<p>Don't hesitate to contact us.</p>
+						<p>
+							14 Canberra Crescent<br/>
+							Kingston 6, Jamaica<br/>
+							+1876 946-3532<br/>
+							<a href="mailto:info@digipoint.biz">info@digipoint.biz</a>
+						</p>
+<!-- 						<div id="mapwrap">
+							<div><img src="http://maps.googleapis.com/maps/api/staticmap?center=18.008345,-76.777237&zoom=15&size=400x400&sensor=false&markers=color:red%7Clabel:C%7C18.008345,-76.777237"></div>
+						</div>	 -->
+					</div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
+			  </div>
+			</div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+	<script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-RPLNNY2SVT">
+  </script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/holder.js"></script>
 	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-47877632-1', 'digipoint.biz');
-	  ga('send', 'pageview');
+	  analytics();
 
 	</script>	
   </body>
